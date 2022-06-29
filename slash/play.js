@@ -10,13 +10,13 @@ module.exports = {
 			subcommand
 				.setName("song")
 				.setDescription("Loads a single song from a url")
-				.addStringOption((option) => option.setName("url").setDescription("Search The Song's URL").setRequired(true))
+				.addStringOption((option) => option.setName("url").setDescription("Search The YouTube Song's URL").setRequired(true))
 		)
 		.addSubcommand((subcommand) =>
 			subcommand
 				.setName("playlist")
 				.setDescription("Loads a playlist of songs from a url")
-				.addStringOption((option) => option.setName("url").setDescription("Search The Playlist's URL").setRequired(true))
+				.addStringOption((option) => option.setName("url").setDescription("Search The YouTube Playlist's URL").setRequired(true))
 		)
 		.addSubcommand((subcommand) =>
 			subcommand
