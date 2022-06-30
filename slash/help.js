@@ -5,6 +5,6 @@ module.exports = {
     .setName("help")
     .setDescription("Help Menu"),
 	run: async ({ client, interaction }) => {
-		await interaction.editReply("play | stop")
+		await interaction.editReply("play | stop | pause | resume")
 	},
 }
