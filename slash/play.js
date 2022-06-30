@@ -5,11 +5,11 @@ const { QueryType } = require("discord-player")
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("play")
-		.setDescription("loads songs from youtube")
+		.setDescription("Play Songs From Youtube")
 		.addSubcommand((subcommand) =>
 			subcommand
 				.setName("song")
-				.setDescription("Loads a single song from a url")
+				.setDescription("Loads A Single Song From A URL")
 				.addStringOption((option) => option.setName("url").setDescription("Search The YouTube Song's URL").setRequired(true))
 		)
 		.addSubcommand((subcommand) =>
@@ -21,9 +21,9 @@ module.exports = {
 		.addSubcommand((subcommand) =>
 			subcommand
 				.setName("search")
-				.setDescription("Searches for sogn based on provided keywords")
+				.setDescription("Searches For The Song Based On Provided Keywords")
 				.addStringOption((option) =>
-					option.setName("name").setDescription("Searches The Provide Song Name").setRequired(true)
+					option.setName("search-term").setDescription("Searches The Provide Song Name").setRequired(true)
 				)
 		),
 	run: async ({ client, interaction }) => {
@@ -66,7 +66,7 @@ module.exports = {
                 .setDescription(`**${result.tracks.length} songs from [${playlist.title}](${playlist.url})** have been added to the Queue`)
                 .setThumbnail(playlist.thumbnail)
 		} else if (interaction.options.getSubcommand() === "search") {
-            let url = interaction.options.getString("search-terms")
+            let url = interaction.options.getString("search-term")
             const result = await client.player.search(url, {
                 requestedBy: interaction.user,
                 searchEngine: QueryType.AUTO
